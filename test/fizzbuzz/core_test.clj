@@ -10,11 +10,19 @@
 (expect "buzz" (fizzbuzz 10))
 (expect "fizzbuzz" (fizzbuzz 15))
 (expect "fizzbuzz" (fizzbuzz 30))
+(expect "fizz" (fizzbuzz 13))
+(expect "buzz" (fizzbuzz 52))
 
 (expect true (divisible-by? 3 3))
 (expect false (divisible-by? 3 4))
 (expect true (divisible-by? 5 5))
 (expect true (divisible-by? 3 6))
+
+(expect true (has? 3 13))
+(expect false (has? 3 12))
+(expect true (has? 3 31))
+(expect true (has? 5 52))
+(expect false (has? 5 42))
 
 (expect nil (stringify 3 "fizz" 2))
 (expect "fizz" (stringify 3 "fizz" 3))

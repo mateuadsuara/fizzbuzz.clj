@@ -4,9 +4,15 @@
 (defn divisible-by? [divider number]
   (= (mod number divider) 0))
 
+(defn has? [content container]
+  (= true
+     (some #(= (str content) (str %))
+           (seq (str container)))))
+
 (defn stringify [factor string number]
-  (if (divisible-by? factor number)
-    string))
+  (if (or (divisible-by? factor number)
+          (has? factor number))
+      string))
 
 (defn join-strings [a b]
   (let [joined (str a b)]
