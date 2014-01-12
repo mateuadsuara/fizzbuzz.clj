@@ -25,4 +25,5 @@
     number))
 
 (defn -main [& args]
-  (apply println (map fizzbuzz (range 1 101))))
+  (doseq [number (range 1 101)]
+    (println (fizzbuzz number))))
