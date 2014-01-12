@@ -7,7 +7,7 @@
 (defn has-digit? [digit number]
   (= true
      (some #(= (first (str digit)) %)
-           (seq (str number)))))
+           (str number))))
 
 (defn stringify [factor string number]
   (when (or (divisible-by? factor number)
