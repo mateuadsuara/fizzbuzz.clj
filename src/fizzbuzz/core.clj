@@ -10,14 +10,13 @@
            (seq (str container)))))
 
 (defn stringify [factor string number]
-  (if (or (divisible-by? factor number)
-          (has? factor number))
+  (when (or (divisible-by? factor number)
+            (has? factor number))
       string))
 
 (defn join-strings [a b]
   (let [joined (str a b)]
-    (if (empty? joined)
-      nil
+    (when-not (empty? joined)
       joined)))
 
 (defn fizzbuzz [number]
