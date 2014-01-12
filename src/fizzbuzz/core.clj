@@ -6,7 +6,7 @@
 
 (defn has-digit? [digit number]
   (= true
-     (some #(= (str digit) (str %))
+     (some #(= (first (str digit)) %)
            (seq (str number)))))
 
 (defn stringify [factor string number]
