@@ -5,9 +5,8 @@
   (= (mod number divider) 0))
 
 (defn has-digit? [digit number]
-  (= true
-     (some #(= (first (str digit)) %)
-           (str number))))
+  (contains? (set (str number))
+             (first (str digit))))
 
 (defn stringify [factor string number]
   (when (or (divisible-by? factor number)
