@@ -14,9 +14,8 @@
       string))
 
 (defn join-strings [a b]
-  (let [joined (str a b)]
-    (when-not (empty? joined)
-      joined)))
+  (when-not (= a b nil)
+    (str a b)))
 
 (defn fizzbuzz [number]
   (or
