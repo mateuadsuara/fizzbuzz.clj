@@ -18,11 +18,11 @@
 (expect true (divisible-by? 5 5))
 (expect true (divisible-by? 3 6))
 
-(expect true (has? 3 13))
-(expect false (has? 3 12))
-(expect true (has? 3 31))
-(expect true (has? 5 52))
-(expect false (has? 5 42))
+(expect true (has-digit? 3 13))
+(expect false (has-digit? 3 12))
+(expect true (has-digit? 3 31))
+(expect true (has-digit? 5 52))
+(expect false (has-digit? 5 42))
 
 (expect nil (stringify 3 "fizz" 2))
 (expect "fizz" (stringify 3 "fizz" 3))

@@ -4,14 +4,14 @@
 (defn divisible-by? [divider number]
   (= (mod number divider) 0))
 
-(defn has? [content container]
+(defn has-digit? [digit number]
   (= true
-     (some #(= (str content) (str %))
-           (seq (str container)))))
+     (some #(= (str digit) (str %))
+           (seq (str number)))))
 
 (defn stringify [factor string number]
   (when (or (divisible-by? factor number)
-            (has? factor number))
+            (has-digit? factor number))
       string))
 
 (defn join-strings [a b]
