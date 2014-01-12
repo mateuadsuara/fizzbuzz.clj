@@ -2,7 +2,7 @@
   (:gen-class))
 
 (defn divisible-by? [divider number]
-  (= (mod number divider) 0))
+  (zero? (mod number divider)))
 
 (defn has-digit? [digit number]
   (contains? (set (str number))
