@@ -20,8 +20,11 @@
   (when-not (= a b nil)
     (str a b)))
 
+(defn label-seq [number]
+  (seq (keep #(% number) [fizz buzz])))
+
 (defn fizzbuzz [number]
-  (if-let [labels (seq (keep #(% number) [fizz buzz]))]
+  (if-let [labels (label-seq number)]
     (apply str labels)
     number))
 

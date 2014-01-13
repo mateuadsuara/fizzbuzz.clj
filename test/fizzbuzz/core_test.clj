@@ -28,6 +28,11 @@
 (expect "fizz" (fizz 3))
 (expect "fizz" (fizz 6))
 
+(expect nil (label-seq 2))
+(expect '("fizz") (label-seq 3))
+(expect '("buzz") (label-seq 25))
+(expect '("fizz" "buzz") (label-seq 51))
+
 (expect nil (join-strings nil nil))
 (expect "a" (join-strings "a" nil))
 (expect "b" (join-strings nil "b"))
