@@ -8,10 +8,11 @@
   (contains? (set (str number))
              (first (str digit))))
 
-(defn stringify [factor string number]
-  (when (or (divisible-by? factor number)
+(defn make-label [factor string]
+  (fn [number]
+    (when (or (divisible-by? factor number)
             (has-digit? factor number))
-      string))
+      string)))
 
 (defn join-strings [a b]
   (when-not (= a b nil)
@@ -20,8 +21,8 @@
 (defn fizzbuzz [number]
   (or
     (join-strings
-      (stringify 3 "fizz" number)
-      (stringify 5 "buzz" number))
+      ((make-label 3 "fizz") number)
+      ((make-label 5 "buzz") number))
     number))
 
 (defn -main [& args]

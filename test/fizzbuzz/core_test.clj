@@ -24,9 +24,10 @@
 (expect true (has-digit? 5 52))
 (expect false (has-digit? 5 42))
 
-(expect nil (stringify 3 "fizz" 2))
-(expect "fizz" (stringify 3 "fizz" 3))
-(expect "fizz" (stringify 3 "fizz" 6))
+(def fizz (make-label 3 "fizz"))
+(expect nil (fizz 2))
+(expect "fizz" (fizz 3))
+(expect "fizz" (fizz 6))
 
 (expect nil (join-strings nil nil))
 (expect "a" (join-strings "a" nil))
