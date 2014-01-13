@@ -24,7 +24,6 @@
 (expect true (has-digit? 5 52))
 (expect false (has-digit? 5 42))
 
-(def fizz (make-label 3 "fizz"))
 (expect nil (fizz 2))
 (expect "fizz" (fizz 3))
 (expect "fizz" (fizz 6))

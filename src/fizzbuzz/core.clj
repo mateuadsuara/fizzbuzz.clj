@@ -13,6 +13,8 @@
     (when (or (divisible-by? factor number)
             (has-digit? factor number))
       string)))
+(def fizz (make-label 3 "fizz"))
+(def buzz (make-label 5 "buzz"))
 
 (defn join-strings [a b]
   (when-not (= a b nil)
@@ -21,8 +23,8 @@
 (defn fizzbuzz [number]
   (or
     (join-strings
-      ((make-label 3 "fizz") number)
-      ((make-label 5 "buzz") number))
+      (fizz number)
+      (buzz number))
     number))
 
 (defn -main [& args]
