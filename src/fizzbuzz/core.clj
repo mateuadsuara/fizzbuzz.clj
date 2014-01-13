@@ -22,9 +22,9 @@
 
 (defn fizzbuzz [number]
   (or
-    (join-strings
-      (fizz number)
-      (buzz number))
+    (let [[a b] [(fizz number) (buzz number)]]
+      (when-not (= a b nil)
+        (str a b)))
     number))
 
 (defn -main [& args]
