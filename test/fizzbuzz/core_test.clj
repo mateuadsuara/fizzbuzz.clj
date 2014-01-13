@@ -32,8 +32,3 @@
 (expect '("fizz") (label-seq 3))
 (expect '("buzz") (label-seq 25))
 (expect '("fizz" "buzz") (label-seq 51))
-
-(expect nil (join-strings nil nil))
-(expect "a" (join-strings "a" nil))
-(expect "b" (join-strings nil "b"))
-(expect "ab" (join-strings "a" "b"))
