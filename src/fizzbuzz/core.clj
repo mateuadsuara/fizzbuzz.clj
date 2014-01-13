@@ -22,9 +22,9 @@
 
 (defn fizzbuzz [number]
   (or
-    (let [[a b] [(fizz number) (buzz number)]]
-      (when-not (= a b nil)
-        (str a b)))
+    (let [labels (keep #(% number) [fizz buzz])]
+      (when-not (empty? labels)
+        (apply str labels)))
     number))
 
 (defn -main [& args]
