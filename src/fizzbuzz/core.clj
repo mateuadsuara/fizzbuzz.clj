@@ -21,9 +21,8 @@
     (str a b)))
 
 (defn fizzbuzz [number]
-  (or
-    (when-let [labels (seq (keep #(% number) [fizz buzz]))]
-      (apply str labels))
+  (if-let [labels (seq (keep #(% number) [fizz buzz]))]
+    (apply str labels)
     number))
 
 (defn -main [& args]
